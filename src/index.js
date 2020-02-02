@@ -36,6 +36,20 @@ export default class IndexClass extends Component {
           <div className='header-item'>
             <img src="https://propertiesdoneproper.s3.amazonaws.com/PropertiesDoneProperlyLogo.svg" className='PropertiesDoneProperImage'/>
           </div>
+          <div className='page'>
+              <HomePage />
+          </div>
+          {/*<div className='footer' />*/}
+        </div>
+      )
+  }
+
+  render2() {
+    return (
+        <div style={{width:'100%'}}>
+          <div className='header-item'>
+            <img src="https://propertiesdoneproper.s3.amazonaws.com/PropertiesDoneProperlyLogo.svg" className='PropertiesDoneProperImage'/>
+          </div>
           <AppBar styles={styles} setPage={this.setPage}/>
           <div className='page'>
             {

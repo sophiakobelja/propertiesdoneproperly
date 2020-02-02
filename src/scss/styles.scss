@@ -31,7 +31,6 @@ img {
   margin-left: auto;
   margin-right: auto;
   width: 60%;
-  padding: 5%;
 }
 
 img.PropertiesDoneProperImage {
@@ -44,7 +43,6 @@ img.PropertiesDoneProperImage {
     font-family: 'Verdana';
     width: 100%;
     div.pageItem {
-        padding-top: 20px;
         width: 60%; 
         margin-left: auto;
         margin-right:auto;
@@ -69,7 +67,6 @@ img.PropertiesDoneProperImage {
     padding: 5px;
     img {
         width: 100%;
-        margin: 5px;
     }
     div {
         padding: 5px;
@@ -120,4 +117,13 @@ img.PropertiesDoneProperImage {
     div {
         display: block;
     }
+}
+
+.slide {
+    padding: 5px;
+    background: none !important;
+}
+
+li {
+    text-align: left;
 }

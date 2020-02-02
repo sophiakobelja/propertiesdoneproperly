@@ -11,7 +11,7 @@ export default class AboutPage extends Component {
     return (
         <div className='pageItem'> 
             <div className='containerRow'>
-                <img src='https://propertiesdoneproper.s3.amazonaws.com/AboutImage.jpeg' style={{width: '60%', margin: '0px', padding: '0px'}}/>
+                <img src='https://propertiesdoneproper.s3.amazonaws.com/AboutImage.jpeg' style={{width: '60%', height: '60%', margin: '0px', padding: '0px'}}/>
                 <div className='padding' />
                 <div>
                     <span style={{fontSize: '24px'}}>Proper</span>
