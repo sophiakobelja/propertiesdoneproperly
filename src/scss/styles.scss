@@ -1,0 +1,123 @@
+.header-item { grid-area: header; }
+.menu-item { grid-area: menu; }
+.main-item { grid-area: main; }
+.right-item { grid-area: right; }
+.footer-item { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.padding {
+    width: 10%
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  padding: 5%;
+}
+
+img.PropertiesDoneProperImage {
+    width: 20%;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.page {
+    font-family: 'Verdana';
+    width: 100%;
+    div.pageItem {
+        padding-top: 20px;
+        width: 60%; 
+        margin-left: auto;
+        margin-right:auto;
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: #545151;
+}
+
+.containerRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.pageItem {
+    margin: 5px;
+    padding: 5px;
+    img {
+        width: 100%;
+        margin: 5px;
+    }
+    div {
+        padding: 5px;
+    }
+}
+
+.services {
+    display:grid; 
+    grid-template-areas: 'r1-c1 r1-c1 r1-c2' 
+                         'r2 r2 r2';
+    grid-gap: 5px;
+    img {
+        padding: 0px;
+        margin: 0px;
+        grid-column: 1/span 2;
+    }
+    .r2 {
+        grid-column: 1/span 3;
+    }
+    .r2,.r3 {
+        font-size: 1.5vw;
+    }
+}
+.servicesItem {
+    display: block;
+    padding: 0px !important;
+    img {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        border-color: #a5a2a2;
+        border-width: 0px 0px 2px 0px;
+        border-style: solid;
+    }
+    div {
+        padding: 10px;
+    }
+}
+
+.servicesGridContainer {
+    display:grid; 
+    grid-template-areas: 'img div';
+}
+
+.aboutPageGrid {
+    display:grid; 
+    grid-template-areas: 'div div';
+    div {
+        display: block;
+    }
+}
