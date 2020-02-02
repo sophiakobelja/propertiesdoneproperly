@@ -7,7 +7,6 @@ import HomePage from './components/homepage'
 import TestPage from './components/testpage'
 import ServicesPage from './components/servicespage'
 import AboutPage from './components/aboutpage'
-import Carousel from 'react-image-carousel';
 import './scss/styles.scss'
 
 const HOME_PAGE_INDEX = 0
