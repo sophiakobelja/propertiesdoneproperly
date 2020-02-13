@@ -4,6 +4,12 @@
 .right-item { grid-area: right; }
 .footer-item { grid-area: footer; }
 
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400; 
+}
 .grid-container {
   display: grid;
   grid-template-areas:
@@ -34,18 +40,121 @@ img {
 }
 
 img.PropertiesDoneProperImage {
-    width: 20%;
     padding-bottom: 5px;
     padding-top: 5px;
+    width: 50%;
+    cursor: pointer;
+}
+
+button {
+    border-width: 0;
+    margin: 10px;
+    font-size: large;
+    font-family: 'Cinzel', serif;
+}
+
+button.selected {
+    color: #848484 !important;
+}
+
+.navBarContainer {
+
+}
+
+.appBarContainer {
+    padding: 5px;
+}
+
+.MuiGrid-container {
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    color: #848484;
+    cursor: pointer;
 }
 
 .page {
-    font-family: 'Verdana';
     width: 100%;
     div.pageItem {
-        width: 60%; 
+        width: 80%; 
         margin-left: auto;
         margin-right:auto;
+        margin-top: 0px;
+        hr {
+            margin-top: 5% !important;
+            margin-bottom: 5% !important;
+        }
+    }
+}
+
+.homePageContainer {
+    height: 100%;
+}
+
+.slide1-text {
+    width: 100%;
+    position: absolute;
+}
+
+.slide2-text {
+    p {
+        position:absolute;
+        padding: 10px;
+        font-size: 2.5vw;
+        top: 60%;
+        background-color: white;
+        right: 0px;
+        opacity: .65;
+    }
+}
+
+.slide3-text {
+    position:absolute;
+    padding: 10px;
+    font-size: 2.5vw;
+    top: 60%;
+    background-color: white;
+    right: 0px;
+    opacity: .65;
+}
+
+.slide4-text {
+    .header {
+        position:absolute;
+        padding: 10px;
+        font-size: 2.5vw;
+        top: 10%;
+        background-color: white;
+        left: 0px;
+        opacity: .65;
+        padding-left: 10%;
+    }
+    .info {
+        position:absolute;
+        padding: 10px;
+        font-size: 2vw;
+        top: 60%;
+        background-color: white;
+        right: 0px;
+        opacity: .65;
+    }
+    
+}
+
+.servicesImageContainer {
+    position:relative;
+    p {
+        position: absolute;
+        padding: 10px;
+        font-size: 2.5vw;
+        background-color: rgba(61, 60, 69, 0.65);
+        left: 10%;
+        color: #dbd3c8;
+        width: 33%;
+        margin-top: 0px;
+        text-align: center;
     }
 }
 
@@ -126,4 +235,124 @@ img.PropertiesDoneProperImage {
 
 li {
     text-align: left;
+}
+
+.servicesList {
+    text-align: center;
+    div {
+        height: 10vh;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+  font-size: 1.5vw;
+}
+
+.grid__item {
+  position: relative;
+  width: 100%;
+  border: 2px solid #ccc;
+  
+  &:nth-child(1) {
+    grid-column: 1 / 2;
+    &::before {
+      padding-top: 50%;
+    }
+    .content {
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+    }
+  }
+  &:nth-child(2) {
+    grid-column: 2 / 3; 
+    &::before {
+      padding-top: 50%;
+    }
+    .content {
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+    }
+  }
+  &:nth-child(3) {
+    grid-column: 3 / 4; 
+    &::before {
+      padding-top: 50%;
+    }
+    .content {
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+    }
+  }
+
+  &:nth-child(4) {
+    grid-column: 1 / 2;
+    &::before {
+      padding-top: 50%;
+    }
+    .content {
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+    }
+  }
+  &:nth-child(5) {
+    grid-column: 2 / 3; 
+    &::before {
+      padding-top: 50%;
+    }
+    .content {
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+    }
+  }
+  &:nth-child(6) {
+    grid-column: 3 / 4; 
+    &::before {
+      padding-top: 50%;
+    }
+    .content {
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+    }
+  }
+  
+  &:before {
+    content: "";
+    height: 0;
+    display: inline-block;
+    padding-top: 100%;
+    width: 1px;
+    position: relative;
+  }
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    justify-items: start;
+    align-items: end;
+  }
+  .content-lr {
+    place-items: end end;
+    text-align: right;
+  }
+  .content-inside {
+    padding: 2rem;
+  }
 }

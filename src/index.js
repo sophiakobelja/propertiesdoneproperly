@@ -8,6 +8,7 @@ import TestPage from './components/testpage'
 import ServicesPage from './components/servicespage'
 import AboutPage from './components/aboutpage'
 import './scss/styles.scss'
+import Divider from '@material-ui/core/Divider';
 
 const HOME_PAGE_INDEX = 0
 const SERVICES_PAGE_INDEX = 1
@@ -33,7 +34,7 @@ export default class IndexClass extends Component {
     return (
         <div style={{width:'100%'}}>
           <div className='header-item'>
-            <img src="https://propertiesdoneproper.s3.amazonaws.com/PropertiesDoneProperlyLogo.svg" className='PropertiesDoneProperImage'/>
+            <img src="https://propertiesdoneproper.s3.amazonaws.com/PropertiesDoneProperlyLogo.png" style={{width: '20%'}}/>
           </div>
           <div className='page'>
               <HomePage />
@@ -46,10 +47,8 @@ export default class IndexClass extends Component {
   render2() {
     return (
         <div style={{width:'100%'}}>
-          <div className='header-item'>
-            <img src="https://propertiesdoneproper.s3.amazonaws.com/PropertiesDoneProperlyLogo.svg" className='PropertiesDoneProperImage'/>
-          </div>
           <AppBar styles={styles} setPage={this.setPage}/>
+          <Divider />
           <div className='page'>
             {
               this.state.currentPage == HOME_PAGE_INDEX && 

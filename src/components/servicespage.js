@@ -8,167 +8,84 @@ export default class ServicesPage extends Component {
     super(props)
   }
 
-  render3() {
-    return (
-        <div className='pageItem'> 
-            <Grid container spacing={3}>
-                <Grid item xs={12} sm={6}>
-                    <img src='https://propertiesdoneproper.s3.amazonaws.com/Services2.png' />
-                </Grid>
-                <Grid item xs={12} sm={3}>
-                    <div>
-                        <p>
-                            Selling your home using the traditional process can be 
-                            COSTLY, TIME-INTENSIVE, and STRESSFUL
-                        </p>
-                    </div>
-                </Grid>
-                <Grid item xs={12} sm={3}>
-                    <p>
-                        We provide CASH and PEACE OF MIND for homeowners who don't have 
-                        the resources or don't want to use their resources to pursue the traditional 
-                        method of selling their home 
-                    </p>
-                </Grid>
-            </Grid>
-            <Divider />
-            <Grid container spacing={3}>
-                <Grid item xs={12} sm={12}>
-                    <div>
-                        We will buy your home regardless of: 
-                    </div>
-                </Grid>
-                <Grid item xs={6} sm={6}>
-                    <div>
-                        Needed Repairs
-                        <br/>
-                        Owed Liens
-                        <br />
-                        Owed Taxes
-                        <br />
-                    </div>
-                </Grid>
-                <Grid item xs={6} sm={6}>
-                    <div>
-                        Vacant home
-                        <br />
-                        Code Violations 
-                        <br />
-                        NO MONEY
-                        <br />
-                    </div>
-                </Grid>
-            </Grid>
-        </div>
-      )
-  }
-
-  render2() {
-    return (
-        <div className='pageItem'> 
-            <Grid container spacing={3}>
-                <Grid item xs={12} sm={4}>
-                    <img src='https://propertiesdoneproper.s3.amazonaws.com/Services2.png' />
-                </Grid>
-                <Grid item xs={12} sm={4}>
-                    <div>
-                        <p>
-                            Selling your home using the traditional process can be 
-                            COSTLY, TIME-INTENSIVE, and STRESSFUL
-                        </p>
-                        <p>
-                            We provide CASH and PEACE OF MIND for homeowners who don't have 
-                            the resources or don't want to use their resources to pursue the traditional 
-                            method of selling their home 
-                        </p>
-                    </div>
-                </Grid>
-                <Grid item xs={12} sm={4}>
-                    <Grid container spacing={2}> 
-                        <Grid item xs={12} sm={12}>
-                            <div>
-                                We will buy your home regardless of: 
-                            </div>
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <div>
-                                Needed Repairs
-                                <br/>
-                                Owed Liens
-                                <br />
-                                Owed Taxes
-                                <br />
-                            </div>
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <div>
-                                Vacant home
-                                <br />
-                                Code Violations 
-                                <br />
-                                NO MONEY
-                                <br />
-                            </div>
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Grid>
-        </div>
-      )
-  }
-
   render() {
     return (
-        <div className='pageItem'>
-            <img src='https://propertiesdoneproper.s3.amazonaws.com/Services2.png' />
+        <div className='pageItem'> 
+            <div className='servicesImageContainer'>
+                <p class="servicesImageText"> We provide 
+                    <br />
+                    <span style={{fontSize: '5vw'}}>CASH</span>
+                    <br /> and <br /> 
+                    <span style= {{width: '100%', fontSize: '3.5vw'}}>
+                        PEACE OF MIND
+                    </span> <br/>to ANY homeowner
+                </p>
+                <img src='https://propertiesdoneproper.s3.amazonaws.com/Services2.png' />
+            </div>
             <Divider />
-            <Grid container>
-                <Grid item xs={12} sm={4}>
-                    <div>
-                        <p>
-                            Selling your home using the traditional process can be 
-                            COSTLY, TIME-INTENSIVE, and STRESSFUL
-                        </p>
-                    </div>
-                </Grid>
-                <Grid item xs={12} sm={4}>
-                    <p>
-                        We provide CASH and PEACE OF MIND for homeowners who don't have 
-                        the resources or don't want to use their resources to pursue the traditional 
-                        method of selling their home 
-                    </p>
-                </Grid>
-                <Grid item xs={12} sm={4}>
-                    <Grid item xs={12} sm={12}>
+            <div style={{textAlign: 'center', fontSize: '4vw'}}>
+                We will buy your home regardless of: 
+            </div>
+            <div class="grid">
+                <div class="grid__item">
+                    <div class="content">
+                    <div class="content-inside">
                         <div>
-                            We will buy your home regardless of: 
+                            Needed Repairs
                         </div>
-                        <Grid container items={2}>
-                            <Grid item xs={6} sm={6}>
-                                <div>
-                                    Needed Repairs
-                                    <br/>
-                                    Owed Liens
-                                    <br />
-                                    Owed Taxes
-                                    <br />
-                                </div>
-                            </Grid>
-                            <Grid item xs={6} sm={6}>
-                                <div>
-                                    Vacant home
-                                    <br />
-                                    Code Violations 
-                                    <br />
-                                    NO MONEY
-                                    <br />
-                                </div>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Grid>
+                    </div>
+                    </div>
+                </div>
+                <div class="grid__item">
+                    <div class="content">
+                    <div class="content-inside">
+                        <div>
+                            Owed Liens
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="grid__item">
+                    <div class="content content-lr">
+                    <div class="content-inside">
+                        <div>
+                            Owed Taxes
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="grid__item">
+                    <div class="content content-lr">
+                    <div class="content-inside">
+                        <div>
+                            Code Violations 
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="grid__item">
+                    <div class="content content-lr">
+                    <div class="content-inside">
+                        <div>
+                            Owed Taxes
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="grid__item">
+                    <div class="content content-lr">
+                    <div class="content-inside">
+                        <div>
+                            NO MONEY
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
       )
   }
 }
+
+
+            

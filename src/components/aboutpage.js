@@ -35,25 +35,31 @@ export default class AboutPage extends Component {
                 <div>
                     <h3> Our Team </h3>
                     <p>
-                        We are a team of investors that will buy your home in its 
-                        current condition and pay you cash in 45 days or less. 
-                        Our nation-wide network of partners are devoted to 
-                        to buying homes that the typical home-buyer wouldn't. 
+                        We are a team of investors dedicated to solving the problems
+                        many homeowners face when selling their homes.
+                        We are passionate about helping homeowners because we know what 
+                        it's like--many of us have come from very similar situations. 
+                        Our purpose extends beyond investing--we take the time to 
+                        understand your needs and address every situation individually.
+                         
                     </p>
                 </div>
                 <div>
                     <h3> Our Promise to You </h3>
                     <p>
-                        We close quick, fast, and in a hurry.
+                        We close fast
                         <br/>
-                        We take care of closing costs and deliver your money in 45 days or less 
+                        We take care of closing costs 
                         <br/>
-                        We know you have waited long enough
-                        <br />
-                        Let us help you get this done properly
+                        We will deliver your money in 45 days or less 
+                        <br/>
+                        We put the proper in property
                     </p>
                 </div>
             </div>
+            We know you have waited long enough
+            <br />
+            Let us help you get this done properly
             <h2> 
                 <a onClick={() => {alert("hi")}}>Contact us</a>! We'd love to help in any way we can!
             </h2>
