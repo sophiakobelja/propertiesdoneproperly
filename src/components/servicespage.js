@@ -11,6 +11,15 @@ export default class ServicesPage extends Component {
   render() {
     return (
         <div className='pageItem'> 
+            <div className='pageBanner'>
+                <div>
+                    <Grid container spacing={3}>
+                        <Grid item xs={12} sm={8}>
+                            <span></span>
+                        </Grid>
+                    </Grid>
+                </div>
+            </div>
             <div className='servicesImageContainer'>
                 <p class="servicesImageText"> We provide 
                     <br />
