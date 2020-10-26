@@ -1,0 +1,26 @@
+.#{$prefix}code-snippet {
+  font-family: $code-snippet-font-family;
+  padding: 1em;
+
+  @include themed() {
+    color: fetch-theme-color($code-snippet-text) !important;
+    background-color: fetch-theme-color($code-snippet-bg) !important;
+  }
+  &__content {
+    @include themed() {
+      padding: 1em;
+      background-color: lighten(fetch-theme-color($code-snippet-bg), 10%);
+    }
+    max-height: 20em;
+    overflow-y: auto;
+    overflow-x: auto;
+    position: relative;
+  }
+  &__copy-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    cursor: pointer;
+  }
+}

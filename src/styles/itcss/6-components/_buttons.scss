@@ -1,0 +1,241 @@
+.#{$prefix}button {
+  // background-color: $primary-bg;
+  //  border: 2px solid $button-border-color;
+  // color: $primary-color;
+  @include themed() {
+    background-color: fetch-theme-color($button-bg);
+    color: fetch-theme-color($button-text);
+    border: 2px solid fetch-theme-color($button-border-color);
+  }
+  border-radius: $button-radius;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  line-height: 1;
+  padding: $button-padding;
+  text-decoration: none;
+  transition: color, background-color 0.2s;
+  text-transform: uppercase;
+
+  &:hover {
+    @include themed() {
+      background-color: fetch-theme-color($button-bg-hover);
+    }
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+.#{$prefix}button--outline {
+  @include themed() {
+    background-color: fetch-theme-color($button-bg);
+    color: fetch-theme-color($button-text);
+    border: 2px solid fetch-theme-color($button-border-color);
+  }
+  border-radius: $button-radius;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  line-height: 1;
+  padding: $button-padding;
+  text-decoration: none;
+  transition: color, background-color 0.2s;
+  text-transform: uppercase;
+
+  &:hover {
+    @include themed() {
+      background-color: fetch-theme-color($button-bg-hover);
+    }
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+.#{$prefix}button.#{$prefix}button--primary {
+  @include themed() {
+    background-color: fetch-theme-color($button-bg-primary) !important;
+    color: fetch-theme-color($button-text);
+    border: 2px solid fetch-theme-color($button-border-color);
+  }
+
+  &:hover {
+    @include themed() {
+      background-color: lighten(
+        fetch-theme-color($button-bg-primary),
+        15%
+      ) !important;
+    }
+  }
+}
+
+.#{$prefix}button.#{$prefix}button--outline__primary {
+  @include themed() {
+    background-color: fetch-theme-color($button-bg);
+    color: fetch-theme-color($button-text);
+    border: 2px solid fetch-theme-color($button-bg-primary);
+  }
+
+  &:hover {
+    @include themed() {
+      background-color: fetch-theme-color($button-bg-hover);
+    }
+  }
+}
+
+.#{$prefix}button.#{$prefix}button--secondary {
+  @include themed() {
+    background-color: fetch-theme-color($button-bg-secondary);
+    color: fetch-theme-color($button-text);
+    border: 2px solid fetch-theme-color($button-border-color);
+  }
+
+  &:hover {
+    @include themed() {
+      background-color: fetch-theme-color($button-bg-hover);
+    }
+  }
+}
+
+.#{$prefix}button.#{$prefix}button--outline__secondary {
+  @include themed() {
+    background-color: fetch-theme-color($button-bg);
+    color: fetch-theme-color($button-text);
+    border: 2px solid fetch-theme-color($button-bg-secondary) !important;
+  }
+
+  &:hover {
+    @include themed() {
+      background-color: fetch-theme-color($button-bg-hover);
+    }
+  }
+}
+
+.#{$prefix}button.#{$prefix}button--success {
+  @include themed() {
+    background-color: fetch-theme-color($success);
+    color: fetch-theme-color($button-text);
+    border: 2px solid fetch-theme-color($button-border-color);
+  }
+
+  &:hover {
+    @include themed() {
+      background-color: fetch-theme-color($button-bg-hover);
+    }
+  }
+}
+
+.#{$prefix}button.#{$prefix}button--outline__success {
+  @include themed() {
+    background-color: fetch-theme-color($button-bg);
+    color: fetch-theme-color($button-text);
+    border: 2px solid fetch-theme-color($success) !important;
+  }
+
+  &:hover {
+    @include themed() {
+      background-color: fetch-theme-color($button-bg-hover);
+    }
+  }
+}
+
+.#{$prefix}button.#{$prefix}button--error {
+  @include themed() {
+    background-color: fetch-theme-color($error);
+    color: fetch-theme-color($button-text);
+    border: 2px solid fetch-theme-color($button-border-color);
+  }
+
+  &:hover {
+    @include themed() {
+      background-color: fetch-theme-color($button-bg-hover);
+    }
+  }
+}
+
+.#{$prefix}button.#{$prefix}button--outline__error {
+  @include themed() {
+    background-color: fetch-theme-color($button-bg);
+    color: fetch-theme-color($button-text);
+    border: 2px solid fetch-theme-color($error) !important;
+  }
+
+  &:hover {
+    @include themed() {
+      background-color: fetch-theme-color($button-bg-hover);
+    }
+  }
+}
+
+.#{$prefix}button.#{$prefix}button--warning {
+  @include themed() {
+    background-color: fetch-theme-color($warning);
+    color: fetch-theme-color($button-text);
+    border: 2px solid fetch-theme-color($button-border-color);
+  }
+
+  &:hover {
+    @include themed() {
+      background-color: fetch-theme-color($button-bg-hover);
+    }
+  }
+}
+
+.#{$prefix}button.#{$prefix}button--outline__warning {
+  @include themed() {
+    background-color: fetch-theme-color($button-bg);
+    color: fetch-theme-color($button-text);
+    border: 2px solid fetch-theme-color($warning) !important;
+  }
+
+  &:hover {
+    @include themed() {
+      background-color: fetch-theme-color($button-bg-hover);
+    }
+  }
+}
+
+.#{$prefix}button.#{$prefix}button--info {
+  @include themed() {
+    background-color: fetch-theme-color($info);
+    color: fetch-theme-color($button-text);
+    border: 2px solid fetch-theme-color($button-border-color);
+  }
+
+  &:hover {
+    @include themed() {
+      background-color: fetch-theme-color($button-bg-hover);
+    }
+  }
+}
+
+.#{$prefix}button.#{$prefix}button--outline__info {
+  @include themed() {
+    background-color: fetch-theme-color($button-bg);
+    color: fetch-theme-color($button-text);
+    border: 2px solid fetch-theme-color($info) !important;
+  }
+
+  &:hover {
+    @include themed() {
+      background-color: fetch-theme-color($button-bg-hover);
+    }
+  }
+}
+
+// Button Sizes
+.#{$prefix}button.#{$prefix}button--75 {
+  font-size: $button-font-size--75;
+  font-weight: $button-font-weight--75;
+  padding: $button-padding--75;
+  &:hover {
+    @include themed() {
+      background-color: fetch-theme-color($button-bg-hover);
+    }
+  }
+}

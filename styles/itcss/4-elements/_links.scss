@@ -1,0 +1,16 @@
+a {
+  @include themed() {
+    color: fetch-theme-color($link);
+  }
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+a:active,
+a:hover {
+  @include themed() {
+    color: fetch-theme-color($link-hover) !important;
+  }
+}

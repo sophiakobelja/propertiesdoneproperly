@@ -1,0 +1,35 @@
+/* Dashed border */
+.#{$prefix}separator--dashed {
+  @include themed() {
+    border-top: 3px dashed fetch-theme-color($primary-color);
+  }
+}
+
+/* Dotted border */
+.#{$prefix}separator--dotted {
+  @include themed() {
+    border-top: 3px dotted fetch-theme-color($primary-color);
+  }
+}
+
+/* Solid border */
+.#{$prefix}separator--solid {
+  @include themed() {
+    border-top: 3px solid fetch-theme-color($primary-color);
+  }
+}
+
+/* Solid border */
+.#{$prefix}separator {
+  @include themed() {
+    border-top: 3px solid fetch-theme-color($primary-color);
+  }
+}
+
+/* Rounded border */
+.#{$prefix}separator--rounded {
+  @include themed() {
+    border-top: 8px solid fetch-theme-color($primary-color);
+    border-radius: 5px;
+  }
+}

@@ -1,69 +1,68 @@
-import React, {Component} from 'react'
-import Divider from '@material-ui/core/Divider';
+import React from 'react';
+import AppBar from './appbar';
+import AboutImage from '../img/AboutImage.png';
 
-export default class AboutPage extends Component {
-
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-        <div className='pageItem'> 
-            <div className='containerRow'>
-                <img src='https://propertiesdoneproper.s3.amazonaws.com/AboutImage.jpeg' style={{width: '60%', height: '60%', margin: '0px', padding: '0px'}}/>
-                <div className='padding' />
-                <div>
-                    <span style={{fontSize: '24px'}}>Proper</span>
-                    <div>
-                        <span style={{fontStyle: 'italic'}}>adjective </span>
-                    </div>
-                    Truly what something is said or regarded to be; genuine
-                    <div>
-                        <h3> Our Core Values </h3>
-                        <p>
-                            Proper service is what everyone deserves. We provide this by demonstrating
-                            honesty, integrity, and professionalim at all times.
-                        </p>
-                    </div>
-                </div>
+export default function AboutPage(props) {
+  return (
+    <PageContainer {...props}>
+      <PageHeader text="About Us" />
+      <div className="relative w-100">
+        <img src={AboutImage} className="w-100 absolute z--1" />
+        <div className="center w-90 white">
+          <div className="flex w-100 justify-center">
+            <div className="definition h-25 mt3 f3">
+              <Definition />
             </div>
-            <br />
-            <Divider />
-            <br />
-            <div className='aboutPageGrid'>
-                <div>
-                    <h3> Our Team </h3>
-                    <p>
-                        We are a team of investors dedicated to solving the problems
-                        many homeowners face when selling their homes.
-                        We are passionate about helping homeowners because we know what 
-                        it's like--many of us have come from very similar situations. 
-                        Our purpose extends beyond investing--we take the time to 
-                        understand your needs and address every situation individually.
-                         
-                    </p>
-                </div>
-                <div>
-                    <h3> Our Promise to You </h3>
-                    <p>
-                        We close fast
-                        <br/>
-                        We take care of closing costs 
-                        <br/>
-                        We will deliver your money in 45 days or less 
-                        <br/>
-                        We put the proper in property
-                    </p>
-                </div>
-            </div>
-            We know you have waited long enough
-            <br />
-            Let us help you get this done properly
-            <h2> 
-                <a onClick={() => {alert("hi")}}>Contact us</a>! We'd love to help in any way we can!
-            </h2>
+          </div>
+          <div className="h-75 mt3 f3">hi</div>
         </div>
-      )
-  }
+      </div>
+    </PageContainer>
+  );
 }
+
+const Definition = () => {
+  return (
+    <React.Fragment>
+      <div>
+        <span className="f1 mr2">Proper</span>
+        <span className="ma0 i">adjective</span>
+      </div>
+      <div>prop•er | /’präpәr/</div>
+      <div className="f2">
+        Truly what something is said or regarded to be; genuine
+      </div>
+    </React.Fragment>
+  );
+};
+
+const CenteredLine = () => {
+  return (
+    <div className="flex items-center">
+      <div className="w-100 h3 relative centered-line" />
+    </div>
+  );
+};
+
+const PageHeader = props => {
+  return (
+    <div className="w-100 flex items-center justify-center">
+      <div className="w-25">
+        <CenteredLine />
+      </div>
+      <div className="ma2 f1">{props.text.toUpperCase()}</div>
+      <div style={{ flex: 1 }}>
+        <CenteredLine />
+      </div>
+    </div>
+  );
+};
+
+const PageContainer = ({ children, ...props }) => {
+  return (
+    <div>
+      <AppBar {...props} />
+      <div className="mw8 center">{children}</div>
+    </div>
+  );
+};

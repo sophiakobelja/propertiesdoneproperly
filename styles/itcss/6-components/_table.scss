@@ -1,0 +1,35 @@
+.#{$prefix}table {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  & th {
+    text-align: start;
+    @include themed() {
+      border-bottom: 1px solid fetch-theme-color($table-border);
+    }
+  }
+  & tr:not(:last-child) > td {
+    @include themed() {
+      border-bottom: 1px solid fetch-theme-color($table-border);
+    }
+  }
+  & th,
+  td {
+    padding: 0.5rem;
+  }
+
+  &--outlined {
+    @include themed() {
+      border: 1px solid fetch-theme-color($table-border);
+    }
+    & th,
+    td {
+      @include themed() {
+        border: 1px solid fetch-theme-color($table-border);
+      }
+    }
+  }
+}

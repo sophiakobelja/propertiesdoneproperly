@@ -1,0 +1,47 @@
+.#{$prefix}page-shell {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: '#{$prefix}page-shell__header #{$prefix}page-shell__header #{$prefix}page-shell__header #{$prefix}page-shell__header #{$prefix}page-shell__header #{$prefix}page-shell__header #{$prefix}page-shell__header #{$prefix}page-shell__header #{$prefix}page-shell__header #{$prefix}page-shell__header #{$prefix}page-shell__header #{$prefix}page-shell__header ''#{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body''#{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body''#{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body''#{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body''#{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body #{$prefix}shell__body';
+}
+
+.#{$prefix}page-shell__header {
+  // grid-area: #{$prefix}page-shell__header;
+  background-color: black;
+  color: white;
+  @include themed() {
+    background-color: fetch-theme-color($header-bg-color);
+    color: fetch-theme-color($header-text-color);
+  }
+}
+
+.#{$prefix}page-shell__body {
+  grid-area: #{$prefix}shell__body;
+}
+
+.#{$prefix}page-shell__header-label {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 1rem;
+}
+
+.#{$prefix}body__content {
+  flex: 1 0 auto;
+  padding: $gutter;
+}
+
+.#{$prefix}footer {
+  flex-shrink: 0;
+}
+
+.#{$prefix}body__container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  width: 100%;
+  scroll-behavior: smooth;
+}

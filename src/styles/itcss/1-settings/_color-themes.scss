@@ -1,0 +1,510 @@
+@use "sass:map";
+@use "sass:color";
+
+$bg-transparent: rgba(0, 0, 0, 0);
+// these are the keys that you'll use to "look up" colors in the theme map
+$text: 'text';
+$text-hover: 'text-hover';
+$bg: 'bg';
+$text-contrast: 'text-contrast';
+$bg-contrast: 'bg-contrast';
+$success: 'success';
+$info: 'info';
+$error: 'error';
+$warning: 'warning';
+$footer-bg: 'footer-bg';
+$footer-text: 'footer-text';
+$link: 'link';
+$link-hover: 'link-hover';
+$button-bg-primary: 'button-bg-primary';
+$button-bg: 'button-bg';
+$button-bg-hover: 'button-bg-hover';
+$button-bg-secondary: 'button-bg-secondary';
+$button-border-color: 'button-border-color';
+$text-dark: 'text-dark';
+$header-bg-color: 'header-bg-color';
+$header-text-color: 'header-text-color';
+$button-text: 'button-text';
+$table-border: 'table-border';
+$drawer-text: 'drawer-text';
+$drawer-bg-color: 'drawer-bg-color';
+$code-snippet-bg: 'code-snippet-bg';
+$code-snippet-text: 'code-snippet-text';
+$accordion-text: 'accordion-text';
+$accordion-bg-color: 'accordion-bg-color';
+$accordion-section-bg: 'accordion-section-bg';
+$inputfield-primary-color: 'inputfield-primary-color';
+$toggle: 'toggle';
+$tab: 'tab';
+$tab-after: 'tab';
+
+// these are from http://www.colorserver.net/showcolor.asp?fs=15123 website where you can search a fed std color by fs color
+// variables by Federal Standards nomenclature
+$fs-11105: #9f0102;
+$fs-14187: #347716;
+$fs-15123: #3b5b98;
+$fs-21136: #8e1600;
+$fs-23538: #edb401;
+$fs-24300: #769c87;
+$fs-27038: #232227;
+$fs-17875: #eef5e6;
+$fs-26231: #70787e;
+$fs-13538: #edb401;
+$fs-17038: #212125;
+$fs-21105: #9f0102;
+$fs-26492: #b7bdb3;
+$fs-26622: #c4c6b9;
+$fs-27875: #eef5e6;
+$fs-33538: #edb401;
+$fs-37875: #eef5e6;
+
+// semantic variables pointing back to federal standards definitions
+$red: $fs-11105;
+$red-semigloss: $fs-21105;
+$green: $fs-14187;
+$blue: $fs-15123;
+$maroon: $fs-21136;
+$yellow: $fs-23538;
+$mint-green: $fs-24300;
+$near-black: $fs-27038;
+$off-white: $fs-17875;
+$near-white: lighten($off-white, 5%);
+$gray: $fs-26231;
+$light-gray: $fs-26492;
+$light-gray-2: $fs-26622;
+
+$fed-std-595-colors: (
+  fs-11105: $fs-11105,
+  'red': $fs-11105,
+  fs-13538: $fs-13538,
+  fs-14187: $fs-14187,
+  'green': $fs-14187,
+  fs-15123: $fs-15123,
+  'blue': $fs-15123,
+  fs-17038: $fs-17038,
+  fs-17875: $fs-17875,
+  'near-white': $fs-17875,
+  'off-white': $fs-17875,
+  fs-21105: $fs-21105,
+  'red-semigloss': $fs-21105,
+  fs-21136: $fs-21136,
+  'maroon': $fs-21136,
+  fs-23538: $fs-23538,
+  'yellow': $fs-23538,
+  fs-24300: $fs-24300,
+  'mint-green': $fs-24300,
+  fs-26231: $fs-26231,
+  'gray': $fs-26231,
+  fs-26492: $fs-26492,
+  'light-gray': $fs-26492,
+  fs-26622: $fs-26622,
+  'light-gray-2': $fs-26622,
+  fs-27038: $fs-27038,
+  'near-black': $fs-27038,
+  fs-27875: $fs-27875,
+  fs-33538: $fs-33538,
+  fs-37875: $fs-37875,
+);
+
+$lightened-red: lighten($red, 50%);
+$lightened-green: lighten(#347716, 70%);
+$lightened-yellow: lighten(map.get($fed-std-595-colors, 'yellow'), 40%);
+$lightened-blue: lighten($blue, 50%);
+
+$base-colors: (
+  'red': $lightened-red,
+  'orange': #ffefe6,
+  'yellow': $lightened-yellow,
+  'green': lighten(#347716, 50%),
+  'mint-green': lighten($mint-green, 30%),
+  'blue': lighten(#3b5b98, 50%),
+  'purple': #d8c7f0,
+  'gray': lighten($near-black, 60%),
+  'light-gray': lighten($near-black, 85%),
+);
+
+// build shade map
+$shade-colors: ();
+@for $i from 1 through 10 {
+  @each $name, $color in $base-colors {
+    $new: (#{$name + '-' + ($i * 10)}: darken($color, $i * 5%));
+    $shade-colors: map.merge($shade-colors, $new);
+  }
+}
+
+// primary color
+$primary-color: #000066 !default;
+$secondary-color: #ff9900 !default;
+$tertiary-color: #00cccc !default;
+
+// background
+$bg--light: map.get($shade-colors, 'light-gray-10') !default;
+$bg--dark: darken($near-black, 5%);
+
+// header
+$header-bg-color--light: $primary-color;
+$header-bg-color--dark: darken($near-black, 10%);
+$header-text-color--light: white !default;
+$header-text-color--dark: map.get($shade-colors, 'light-gray-20') !default;
+
+// footer
+$footer-bg--light: $primary-color;
+$footer-bg--dark: black;
+$footer-text--light: white !default;
+$footer-text--dark: map.get($shade-colors, 'light-gray-20') !default;
+
+//links
+$link--light: map.get($shade-colors, 'light-gray-20') !default;
+$link--dark: map.get($shade-colors, 'light-gray-20') !default;
+$link-hover--light: #9a9a9a !default;
+$link-hover--dark: #9a9a9a !default;
+
+// text
+$text--light: $primary-color !default;
+$text-hover--light: lighten($near-black, 30%);
+$text--dark: map.get($shade-colors, 'light-gray-20') !default;
+$text-hover--dark: darken($text--dark, 15%);
+
+// warning
+$warning--light: lighten($yellow, 20%) !default;
+$warning--dark: $yellow !default;
+
+// info
+$info--light: lighten($blue, 30%) !default;
+$info--dark: $blue !default;
+
+// success
+$success--light: $mint-green !default;
+$success--dark: $green !default;
+
+// error
+$error--light: lighten($red-semigloss, 30%) !default;
+$error--dark: $red-semigloss !default;
+
+// button
+$button-bg--light: $bg--light;
+$button-bg-hover--light: scale-color($bg--light, $lightness: -10%);
+$button-bg--dark: $bg--dark;
+$button-bg-hover--dark: scale-color($bg--dark, $lightness: 20%);
+$button-border-color--light: darken($bg--light, 10%);
+$button-border-color--dark: lighten($bg--dark, 10%);
+$button-text--light: $text--light;
+$button-text--dark: $text--dark;
+$button-bg-secondary--light: $gray !default;
+$button-bg-secondary--dark: $light-gray !default;
+$button-bg-primary--light: lighten($blue, 10%) !default;
+$button-bg-primary--dark: $blue !default;
+
+// table
+$table-border--light: lighten($text--light, 10%);
+$table-border--dark: darken($text--dark, 10%);
+
+// drawer
+$drawer-bg-color--light: $near-black;
+$drawer-bg-color--dark: $near-black;
+$drawer-text--light: map.get($shade-colors, 'light-gray-20') !default;
+$drawer-text--dark: map.get($shade-colors, 'light-gray-20') !default;
+
+// accordion
+$accordion-bg-color--light: $near-black;
+$accordion-bg-color--dark: $near-black;
+$accordion-section-bg--light: lighten($near-black, 10%);
+$accordion-section-bg--dark: lighten($near-black, 10%);
+$accordion-text--light: map.get($shade-colors, 'light-gray-20') !default;
+$accordion-text--dark: map.get($shade-colors, 'light-gray-20') !default;
+
+// toggle
+$toggle--light: lighten($gray, 20%) !default;
+$toggle--dark: $gray !default;
+
+// code snippet
+$code-snippet-bg--light: $near-black;
+$code-snippet-bg--dark: $near-black;
+$code-snippet-text--light: map.get($shade-colors, 'light-gray-10') !default;
+$code-snippet-text--dark: map.get($shade-colors, 'light-gray-20') !default;
+
+// input field
+$inputfield-primary-color--light: lighten($blue, 30%) !default;
+$inputfield-primary-color--dark: $blue !default;
+
+//tabs
+$tab--light: $near-black;
+$tab--dark: $near-white;
+$tab-after--light: $near-white;
+$tab-after--dark: $near-black;
+
+// build theme map
+$themes: (
+  default: (
+    bg: $bg--light,
+    bg-contrast: $bg--dark,
+    text: $text--light,
+    text-hover: $text-hover--light,
+    text-contrast: $text--dark,
+    footer-bg: $footer-bg--light,
+    footer-text: $footer-text--light,
+    warning: $warning--light,
+    info: $info--light,
+    success: $success--light,
+    error: $error--light,
+    link: $link--light,
+    link-hover: $link-hover--light,
+    button-bg: $button-bg--light,
+    button-bg-hover: $button-bg-hover--light,
+    button-border-color: $button-border-color--light,
+    button-text: $button-text--light,
+    text-dark: #212125,
+    text-light: #c4c6b9,
+    header-bg-color: $header-bg-color--light,
+    header-text-color: $header-text-color--light,
+    table-border: $table-border--light,
+    drawer-text: $drawer-text--light,
+    drawer-bg-color: $drawer-bg-color--light,
+    code-snippet-bg: $code-snippet-bg--light,
+    code-snippet-text: $code-snippet-text--light,
+    accordion-text: $accordion-text--light,
+    accordion-bg-color: $accordion-bg-color--light,
+    accordion-section-bg: $accordion-section-bg--light,
+    inputfield-primary-color: $inputfield-primary-color--light,
+    toggle: $toggle--light,
+    tab: $tab--light,
+    tab-after: $tab-after--light,
+    button-bg-secondary: $button-bg-secondary--light,
+    button-bg-primary: $button-bg-primary--light,
+  ),
+  dark: (
+    bg: $bg--dark,
+    bg-contrast: map.get($shade-colors, 'light-gray-20'),
+    text: $text--dark,
+    text-hover: $text-hover--dark,
+    text-contrast: $text--light,
+    footer-bg: $footer-bg--dark,
+    footer-text: $footer-text--dark,
+    warning: $warning--dark,
+    info: $info--dark,
+    success: $success--dark,
+    error: $error--dark,
+    link: $link--dark,
+    link-hover: $link-hover--dark,
+    button-bg: $button-bg--dark,
+    button-bg-hover: $button-bg-hover--dark,
+    button-border-color: $button-border-color--dark,
+    button-text: $button-text--dark,
+    text-dark: #212125,
+    text-light: #c4c6b9,
+    header-bg-color: $header-bg-color--dark,
+    header-text-color: $header-text-color--dark,
+    table-border: $table-border--dark,
+    drawer-text: $drawer-text--dark,
+    drawer-bg-color: $drawer-bg-color--dark,
+    code-snippet-bg: $code-snippet-bg--dark,
+    code-snippet-text: $code-snippet-text--dark,
+    accordion-text: $accordion-text--dark,
+    accordion-bg-color: $accordion-bg-color--dark,
+    accordion-section-bg: $accordion-section-bg--dark,
+    inputfiled-primary-color: $inputfield-primary-color--dark,
+    toggle: $toggle--dark,
+    tab: $tab--dark,
+    tab-after: $tab--dark,
+    button-bg-secondary: $button-bg-secondary--dark,
+    button-bg-primary: $button-bg-primary--dark,
+  ),
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function fetch-theme-color($key) {
+  @return map-get($theme-map, $key);
+}
+
+@mixin hover-color($color) {
+  @if color.lightness($color) > 70 {
+    &.hover:hover {
+      color: darken($color, 20%) !important;
+      // color: blue;
+      cursor: pointer;
+    }
+  } @else {
+    &.hover:hover {
+      color: lighten($color, 15%) !important;
+      // color: blue !important;
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin hover-bg-color($color) {
+  @if color.lightness($color) > 70 {
+    &.hover:hover {
+      background: darken($color, 15%);
+      cursor: pointer;
+    }
+  } @else {
+    &.hover:hover {
+      background: lighten($color, 15%);
+      cursor: pointer;
+    }
+  }
+}
+
+// generate color classnames
+// this will create a class name for each color-shade pair
+// example: blue-10 will have a color class: .blue-10 and a background color class: bg-blue-10
+@each $name, $color in $shade-colors {
+  .#{$name} {
+    color: $color !important;
+    @include hover-color($color);
+  }
+  .bg-#{$name} {
+    background-color: $color !important;
+    @include hover-bg-color($color);
+    // &.hover:hover {
+    //   background-color: lighten($color, 15%) !important;
+    //   cursor: pointer;
+    // }
+  }
+}
+
+@each $name, $color in $fed-std-595-colors {
+  .#{$name} {
+    color: $color !important;
+    // &.hover:hover {
+    //   color: lighten($color, 15%) !important;
+    //   cursor: pointer;
+    // }
+    @include hover-color($color);
+    &.outlined {
+      @include themed() {
+        background-color: fetch-theme-color($bg) !important;
+        border: 2px solid $color !important;
+      }
+    }
+  }
+  .bg-#{$name} {
+    background-color: $color !important;
+    &.hover:hover {
+      background-color: lighten($color, 5%) !important;
+      cursor: pointer;
+    }
+  }
+}
+
+.bg-primary {
+  @include themed() {
+    background: fetch-theme-color($bg) !important;
+    // &--hover:hover {
+    //   background-color: lighten(fetch-theme-color($bg), 5%) !important;
+    //   cursor: pointer;
+    // }
+    @include hover-bg-color(fetch-theme-color($bg));
+  }
+}
+
+.text-primary {
+  @include themed() {
+    color: fetch-theme-color($text) !important;
+    @include hover-color(fetch-theme-color($text));
+  }
+  // &.hover:hover {
+  //   @include themed() {
+  //     color: fetch-theme-color($text-hover) !important;
+  //   }
+  // }
+}
+
+.bg-transparent {
+  background-color: $bg-transparent !important;
+}
+
+.root {
+  @include themed() {
+    color: fetch-theme-color($text) !important;
+    background: fetch-theme-color($bg) !important;
+  }
+}
+
+.success {
+  @include themed() {
+    background: fetch-theme-color($success) !important;
+    // &--hover:hover {
+    //   background-color: lighten(fetch-theme-color($success), 5%) !important;
+    //   cursor: pointer;
+    // }
+    @include hover-bg-color(fetch-theme-color($success));
+  }
+}
+
+.error {
+  @include themed() {
+    background: fetch-theme-color($error) !important;
+    &--hover:hover {
+      background-color: lighten(fetch-theme-color($error), 5%) !important;
+      cursor: pointer;
+    }
+  }
+}
+
+.info {
+  @include themed() {
+    background: fetch-theme-color($info) !important;
+    &--hover:hover {
+      background-color: lighten(fetch-theme-color($info), 5%) !important;
+      cursor: pointer;
+    }
+  }
+}
+
+.warning {
+  @include themed() {
+    background: fetch-theme-color($warning) !important;
+    color: fetch-theme-color($text-dark) !important;
+    &--hover:hover {
+      background-color: lighten(fetch-theme-color($warning), 5%) !important;
+      cursor: pointer;
+    }
+  }
+}
+
+.bg-contrast {
+  @include themed() {
+    color: fetch-theme-color($text-contrast) !important;
+    background-color: fetch-theme-color($bg-contrast) !important;
+    &--hover:hover {
+      background-color: lighten(fetch-theme-color($bg-contrast), 5%) !important;
+      cursor: pointer;
+    }
+  }
+}
+
+.text-contrast {
+  @include themed() {
+    color: fetch-theme-color($text-contrast) !important;
+    &--hover:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.footer {
+  @include themed() {
+    background-color: fetch-theme-color($footer-bg) !important;
+    color: fetch-theme-color($footer-text) !important;
+  }
+}

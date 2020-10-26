@@ -1,0 +1,35 @@
+.#{$prefix}dropdown {
+	background-size: 25px 25px;
+	@include themed() {
+		background-color: fetch-theme-color($button-bg) !important;
+		color: fetch-theme-color($button-text);
+		border: 2px solid fetch-theme-color($button-border-color);
+	  }
+	font-family: inherit;
+	font-size: 100%;
+	font-weight: inherit;
+	outline: none;
+	padding: 10px 10px;
+	text-indent: 0.01px;
+	text-overflow: '';
+	vertical-align: middle;
+	width: 25%;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	&:hover {
+		@include themed() {
+		  background-color: fetch-theme-color($button-bg-hover);
+		}
+	  }
+	  &:focus {
+		outline: 0;
+	  }
+}
