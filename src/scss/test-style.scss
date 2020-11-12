@@ -200,13 +200,13 @@ $table-border--light: lighten($text--light, 10%);
 $table-border--dark: darken($text--dark, 10%);
 
 // drawer
-$drawer-bg-color--light: $primary-color;
+$drawer-bg-color--light: $near-black;
 $drawer-bg-color--dark: $near-black;
 $drawer-text--light: map.get($shade-colors, "light-gray-20") !default;
 $drawer-text--dark: map.get($shade-colors, "light-gray-20") !default;
 
 // accordion
-$accordion-bg-color--light: $primary-color;
+$accordion-bg-color--light: $near-black;
 $accordion-bg-color--dark: $near-black;
 $accordion-section-bg--light: lighten($near-black, 10%);
 $accordion-section-bg--dark: lighten($near-black, 10%);
