@@ -4,7 +4,8 @@ import styled from "styled-components";
 import QUOTES_IMAGE from "../img/SVG/Quotes.svg";
 
 const TestimonalStyled = styled.div`
-  padding-bottom: 3rem;
+  padding-bottom: 6rem;
+  padding-top: 1rem;
 `;
 
 const Testimonial = ({ style }) => {
@@ -15,7 +16,7 @@ const Testimonial = ({ style }) => {
         <img className="w1 w2-ns h1 h2-ns" src={QUOTES_IMAGE} />
         <div className="ml2" style={{ borderTop: "1px solid", flex: 1 }} />
       </div>
-      <div style={{ ...style }}>
+      <div style={{ ...style }} className="ph3">
         <div style={{ ...style }} className="mw6 mw7-l center mt4">
           <section>
             <p className="f5 f3-ns f3-m f2-l">

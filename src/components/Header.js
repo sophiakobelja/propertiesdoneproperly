@@ -13,9 +13,9 @@ const Header = ({ style }) => {
           <img src={PDP_LOGO} />
         </div>
       </div>
-      <div className="flex justify-center w-100">
+      {/* <div className="flex justify-center w-100">
         <MainNav />
-      </div>
+      </div> */}
     </div>
   );
 };

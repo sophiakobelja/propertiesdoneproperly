@@ -7,6 +7,7 @@ import Testimonial from "./Testimonial";
 import ProperThreeSteps from "./ProperThreeSteps";
 import ProperPromise from "./ProperPromise";
 import LocationsServed from "./LocationsServed";
+import Footer from "./Footer";
 const Body = ({ style }) => {
   return (
     <div style={{ ...style }}>
@@ -17,6 +18,7 @@ const Body = ({ style }) => {
       <ProperThreeSteps />
       <ProperPromise />
       <LocationsServed />
+      <Footer />
     </div>
   );
 };

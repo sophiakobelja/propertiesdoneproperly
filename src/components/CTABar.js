@@ -15,7 +15,7 @@ const CTABarStyled = styled.div`
 const CTABar = ({ style }) => {
   return (
     <div style={{ ...style, position: "fixed", width: "100%", zIndex: 1000 }}>
-      <CTABarStyled>CALL US! (XXX) XXX-XXXX</CTABarStyled>
+      <CTABarStyled>CALL US! (301) 265-2622</CTABarStyled>
     </div>
   );
 };

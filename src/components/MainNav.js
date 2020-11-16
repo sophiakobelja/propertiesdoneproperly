@@ -148,6 +148,7 @@ const Drawer = () => {
           position: "fixed",
           padding: 0,
           color: "white",
+          zIndex: 1000,
         }}
         ref={navRef}
       >

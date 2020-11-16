@@ -4,8 +4,10 @@ import styled from "styled-components";
 import { PRIMARY_COLOR } from "../styles/itcss/1-settings/settings";
 
 const ProperPromiseStyled = styled.div`
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   color: ${PRIMARY_COLOR};
   p {
     margin-bottom: 0;

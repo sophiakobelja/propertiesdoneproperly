@@ -7024,3 +7024,20 @@ code {
   color: #43423f;
   font-family: avenir next, avenir, sans-serif;
 }
+.ReactModal__Body--open {
+  position: static;
+  overflow-y: hidden;
+}
+
+.ReactModal__Html--open {
+  overflow-y: hidden;
+}
+
+.ReactModalPortal {
+  position: fixed;
+  z-index: 1 !important;
+}
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 102, 0.75) !important;
+}
