@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { GUTTER, BG, TEXT } from "../styles/itcss/1-settings/settings";
+import { PRIMARY_COLOR } from "../styles/itcss/1-settings/settings";
 
 const CTABarStyled = styled.div`
   padding-top: ${GUTTER};
@@ -15,7 +16,12 @@ const CTABarStyled = styled.div`
 const CTABar = ({ style }) => {
   return (
     <div style={{ ...style, position: "fixed", width: "100%", zIndex: 1000 }}>
-      <CTABarStyled>CALL US! (301) 265-2622</CTABarStyled>
+      <CTABarStyled>
+        CALL US! &nbsp;
+        <a href="tel:(301) 265-2622" className="pdp-link--clean">
+          (301) 265-2622
+        </a>
+      </CTABarStyled>
     </div>
   );
 };

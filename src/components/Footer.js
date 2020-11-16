@@ -50,7 +50,7 @@ const Footer = ({ style }) => {
                 </a>
               </div>
               <div className="f6 f5-ns">
-                <a href="tel:123-456-7890" style={{ color: PRIMARY_COLOR }}>
+                <a href="tel:(301) 265-2622" style={{ color: PRIMARY_COLOR }}>
                   (301) 265-2622
                 </a>
               </div>
